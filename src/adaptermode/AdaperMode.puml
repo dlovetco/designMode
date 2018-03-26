@@ -1,0 +1,18 @@
+@startuml
+class Screen{
+connectHdmi()
+}
+interface Vga{
+connectVga()
+}
+Vga <|.. Host
+class Host{
+}
+Screen <-- HdmiToVga
+Vga <|.. HdmiToVga
+class HdmiToVga{
+Screen screen
+connectVga()
+}
+
+@enduml

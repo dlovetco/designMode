@@ -1,0 +1,15 @@
+@startuml
+class Save{
+}
+Save <.. Status
+class Status{
+save()
+load()
+}
+Save <..* SaveManager
+class SaveManager{
+Map<Integer, Save> saveMap
+createSave()
+getSave()
+}
+@enduml

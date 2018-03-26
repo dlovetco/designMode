@@ -1,0 +1,23 @@
+@startuml
+interface Observer{
+update()
+}
+interface Informer{
+seeTeacherComing()
+sendNotice()
+}
+
+Observer <|.. Student
+Informer<--Student
+class Student{
+Informer informer
+}
+
+Informer <|.. Ming
+Observer <-- Ming
+class Ming{
+List<Observer> observers
+seeTeacherComing()
+sendNotice()
+}
+@enduml

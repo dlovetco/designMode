@@ -1,0 +1,22 @@
+@startuml
+interface Factory
+interface CalculateMode
+
+Factory <|.. PlusFactory
+Plus <-- PlusFactory
+class PlusFactory{
+}
+
+Factory <|.. MinusFactory
+Minus <-- MinusFactory
+class MinusFactory{
+}
+
+CalculateMode <|.. Plus
+class Plus{
+}
+
+CalculateMode <|.. Minus
+class Minus{
+}
+@enduml

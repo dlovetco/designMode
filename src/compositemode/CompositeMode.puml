@@ -1,0 +1,21 @@
+@startuml
+interface Root{
+{abstract}grow(Root root)
+{abstract}cut(Root root)
+{abstract}display(int num)
+}
+Root <|.. Branch
+Root <..* Branch
+class Branch{
+List<Root> rootList
+grow(Root root)
+cut(Root root)
+display(int num)
+}
+Root <|.. Leaf
+class Leaf{
+grow(Root root)
+cut(Root root)
+display(int num)
+}
+@enduml

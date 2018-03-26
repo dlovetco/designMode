@@ -1,0 +1,30 @@
+@startuml
+interface Iterator{
+{abstract}next();
+{abstract}first();
+{abstract}hasNext();
+{abstract}currentItem();
+}
+Iterator <|.. StudentIterator
+StudentIterator <.. StudentAggregate
+class StudentIterator{
+next();
+first();
+hasNext();
+currentItem();
+}
+
+Iterator <-- Aggregate
+interface Aggregate{
+{abatract}Iterator createIterator()
+}
+Aggregate <|.. StudentAggregate
+StudentAggregate <-- StudentIterator
+class StudentAggregate{
+List<Student> students
+}
+Student <..* StudentAggregate
+class Student{
+name
+}
+@enduml

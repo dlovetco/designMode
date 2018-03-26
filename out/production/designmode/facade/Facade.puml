@@ -1,0 +1,28 @@
+@startuml
+class TotalSwitch{
+Switch1 switch1
+Switch3 switch2
+Switch2 switch3
+turnOn()
+turnOff()
+}
+Switch1 <-- TotalSwitch
+class Switch1{
+turnOn()
+turnOff()
+}
+Switch2 <-- TotalSwitch
+class Switch2{
+turnOn()
+turnOff()
+}
+Switch3 <-- TotalSwitch
+class Switch3{
+turnOn()
+turnOff()
+}
+TotalSwitch<--Worker
+class Worker{
+TotalSwitch totalSwitch
+}
+@enduml

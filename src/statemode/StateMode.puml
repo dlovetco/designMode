@@ -1,0 +1,23 @@
+@startuml
+interface State{
+{abstract}doThings(Life life)
+}
+State <|.. Childhood
+class Childhood{
+doThings(Life life)
+}
+State <|.. Youth
+class Youth{
+doThings(Life life)
+}
+State <|.. Elder
+class Elder{
+doThings(Life life)
+}
+
+State <..* Life
+class Life{
+String period
+State state
+}
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+interface PersonBuilder{
+{abstract}buildHead()
+{abstract}buildBody()
+{abstract}buildArmsAndLegs()
+}
+PersonBuilder<|..ThinBuilder
+class ThinBuilder{
+buildHead()
+buildBody()
+buildArmsAndLegs()
+}
+
+PersonBuilder<|..FatBuilder
+class FatBuilder{
+buildHead()
+buildBody()
+buildArmsAndLegs()
+}
+
+PersonBuilder<..*PersonDirector
+class PersonDirector{
+PersonBuilder personBuilder
+createPerson()
+}
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+abstract class Exam{
+question1()
+{abstract} answerQuestion1()
+question2()
+{abstract} answerQuestion2()
+}
+Exam <|--Ming
+class Ming{
+answerQuestion1()
+}
+Exam <|--Gang
+class Gang{
+answerQuestion2()
+}
+@enduml

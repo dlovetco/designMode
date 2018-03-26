@@ -1,0 +1,34 @@
+@startuml
+interface DecorateFactory{
+{abstract}Bedroom decorateBedroom()
+{abstract}Kitchen decorateKitchen()
+}
+DecorateFactory <|.. MingDecorate
+class MingDecorate{
+Bedroom decorateBedroom()
+Kitchen decorateKitchen()
+}
+DecorateFactory <|.. HongDecorate
+class HongDecorate{
+Bedroom decorateBedroom()
+Kitchen decorateKitchen()
+}
+Kitchen <.. DecorateFactory
+interface Kitchen{
+}
+Kitchen <|.. MingKitchen
+class MingKitchen{
+}
+Kitchen <|.. HongKitchen
+class HongKitchen{
+}
+Bedroom <.. DecorateFactory
+interface Bedroom{
+}
+Bedroom <|.. MingBedroom
+class MingBedroom{
+}
+Bedroom <|.. HongBedroom
+class HongBedroom{
+}
+@enduml
