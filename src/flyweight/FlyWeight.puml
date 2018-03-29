@@ -1,0 +1,22 @@
+@startuml
+class WebsiteFactory{
+Map<String, Website> websiteMap
+getWebsite(String type)
+getWebsizeNum()
+}
+
+Website <..* WebsiteFactory
+interface Website{
+{abstract}show(User user)
+}
+Website <|.. ConcreteWebsite
+class ConcreteWebsite{
+show(User user)
+}
+
+User <.. Website
+class User{
+String name
+}
+
+@enduml

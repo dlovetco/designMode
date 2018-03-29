@@ -1,0 +1,14 @@
+@startuml
+interface Expression{
+{abstract}execute(Context context)
+}
+Expression <|.. Note
+class Note{
+execute(Context context)
+}
+Context <.. Expression
+class Context{
+string text
+}
+
+@enduml

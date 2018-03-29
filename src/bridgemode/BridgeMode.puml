@@ -1,0 +1,27 @@
+@startuml
+interface Brand{
+{abstract}run(Software)
+}
+Brand <|.. AndroidPhone
+class AndroidPhone{
+run(Software)
+}
+Brand <|.. ApplePhone
+class ApplePhone{
+run(Software)
+}
+
+Software <-- Brand
+interface Software{
+{abstract}run()
+}
+Software <|.. Game
+class Game{
+run()
+}
+Software <|.. VideoPlayer
+class VideoPlayer{
+run()
+}
+
+@enduml

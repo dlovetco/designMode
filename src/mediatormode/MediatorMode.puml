@@ -1,0 +1,34 @@
+@startuml
+interface Country{
+{abstract}setUnion(Mediator mediator);
+{abstract}sendMessage(String message);
+{abstract}getMessage(String message);
+}
+Country <|.. China
+Mediator <-- China
+class China{
+Mediator union
+setUnion(Mediator mediator);
+sendMessage(String message);
+getMessage(String message);
+}
+Country <|.. USA
+Mediator <-- USA
+class USA{
+Mediator union
+setUnion(Mediator mediator);
+sendMessage(String message);
+getMessage(String message);
+}
+
+interface Mediator{
+{abstract}sendMessage(Country country, String message)
+}
+Mediator <|.. Union
+Country <-- Union
+class Union{
+Country china
+Country usa
+sendMessage(Country country, String message)
+}
+@enduml

@@ -1,4 +1,4 @@
-package iteratorMode;
+package iteratormode;
 
 import java.util.ArrayList;
 import java.util.List;

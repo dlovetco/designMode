@@ -1,0 +1,30 @@
+@startuml
+interface Manager{
+{abstract}dealThings(int level);
+{abstract}setSuperManager(Manager manager);
+}
+
+Manager <..* Leader
+Manager <|.. Leader
+class Leader{
+Manager superManager
+dealThings(int level);
+setSuperManager(Manager manager);
+}
+
+Manager <..* Director
+Manager <|.. Director
+class Director{
+Manager superManager
+dealThings(int level);
+setSuperManager(Manager manager);
+}
+
+Manager <..* Boss
+Manager <|.. Boss
+class Boss{
+Manager superManager
+dealThings(int level);
+setSuperManager(Manager manager);
+}
+@enduml

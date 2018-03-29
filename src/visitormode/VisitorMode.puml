@@ -1,0 +1,30 @@
+@startuml
+interface Human{
+{abstract}accept(Action action)
+}
+Human <|.. Man
+class Man{
+accept(Action action)
+}
+Human <|.. Woman
+class Woman{
+accept(Action action)
+}
+
+Human <..> Action
+interface Action{
+{abstract}manConclusion(Human man)
+{abstract}womanConclusion(Human woman)
+}
+Action <|.. Success
+class Success{
+manConclusion(Human man)
+womanConclusion(Human woman)
+}
+Action <|.. Failure
+class Failure{
+manConclusion(Human man)
+womanConclusion(Human woman)
+}
+
+@enduml

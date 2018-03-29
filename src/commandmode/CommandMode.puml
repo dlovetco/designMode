@@ -1,0 +1,27 @@
+@startuml
+interface Order{
+excuteOrder()
+}
+Order <|.. VegetableOrder
+class VegetableOrder{
+Chef chef
+excuteOrder()
+}
+Order <|.. MeatOrder
+class MeatOrder{
+Chef chef
+excuteOrder()
+}
+
+Order <..* Waiter
+class Waiter{
+List<Order> orderList
+}
+
+Chef <-- VegetableOrder
+Chef <-- MeatOrder
+class Chef{
+cookMeat()
+cookVegetable()
+}
+@enduml
